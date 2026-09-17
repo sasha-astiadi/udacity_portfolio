@@ -1,0 +1,85 @@
+@use "../utils/utils" as *;
+
+.latest-projects {
+  background: $color-paper;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+    background: $color-surface;
+    border: 1px solid $color-line;
+    border-radius: $radius-md;
+    box-shadow: $shadow-sm;
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+
+    &:hover,
+    &:focus-within {
+      transform: translateY(-6px);
+      border-color: rgba($color-accent, 0.4);
+      box-shadow: $shadow-lg;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  &__title {
+    margin-bottom: 0.45rem;
+    font-family: $font-display;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__description {
+    margin-bottom: 1.1rem;
+  }
+
+  &__link {
+    margin-top: auto;
+    color: $color-accent;
+    font-weight: 800;
+  }
+}
+
+@include respond(tablet) {
+  .latest-projects__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .latest-projects__card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 0.625rem);
+    width: 100%;
+    justify-self: center;
+  }
+}
+
+@include respond(mobile) {
+  .latest-projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-projects__card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+}

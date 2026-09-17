@@ -1,0 +1,21 @@
+@use "../utils/utils" as *;
+
+.skills {
+  background: $color-surface;
+  border-block: 1px solid $color-line;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__item {
+    padding: 0.65rem 0.9rem;
+    color: $color-ink-soft;
+    background: $color-surface-raised;
+    border: 1px solid $color-line;
+    border-radius: 999px;
+    font-weight: 800;
+  }
+}

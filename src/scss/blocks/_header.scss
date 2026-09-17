@@ -1,0 +1,140 @@
+@use "../utils/utils" as *;
+
+.header {
+  position: fixed;
+  z-index: 100;
+  inset: 0 0 auto;
+  height: $nav-height;
+  background: rgba($color-paper, 0.8);
+  border-bottom: 1px solid $color-line;
+  backdrop-filter: blur(14px);
+  transition: height $transition, box-shadow $transition;
+
+  &--scrolled {
+    height: $nav-height-small;
+    box-shadow: $shadow-sm;
+  }
+
+  &__inner {
+    @include container;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: $color-ink;
+    font-family: $font-display;
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__mark {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    color: $color-primary-ink;
+    background: $color-primary;
+    border-radius: 0.7rem;
+    font-style: italic;
+  }
+
+  &__toggle {
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid $color-line;
+    border-radius: 0.7rem;
+    background: $color-surface;
+  }
+
+  &__toggle-line {
+    display: block;
+    width: 1.15rem;
+    height: 2px;
+    margin: 0.24rem auto;
+    background: $color-ink;
+    transition: transform $transition, opacity $transition;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 2vw, 1.5rem);
+  }
+
+  &__link {
+    color: $color-muted;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color $transition, transform $transition;
+
+    &:hover {
+      color: $color-primary;
+      transform: translateY(-1px);
+    }
+
+    &--cta {
+      padding: 0.55rem 0.9rem;
+      color: $color-primary-ink;
+      background: $color-primary;
+      border-radius: 0.65rem;
+
+      &:hover {
+        color: $color-primary-ink;
+        background: $color-primary-dark;
+      }
+    }
+  }
+}
+
+@include respond(mobile) {
+  .header {
+    &__toggle {
+      display: block;
+    }
+
+    &__nav {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 1rem;
+      right: 1rem;
+      display: grid;
+      gap: 0.25rem;
+      padding: 0.75rem;
+      background: $color-surface;
+      border: 1px solid $color-line;
+      border-radius: $radius-md;
+      box-shadow: $shadow-lg;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-0.5rem);
+      transition: opacity $transition, transform $transition, visibility $transition;
+    }
+
+    &--menu-open &__nav {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    &__link {
+      padding: 0.7rem;
+    }
+
+    &--menu-open &__toggle-line {
+      &:nth-child(1) { transform: translateY(0.38rem) rotate(45deg); }
+      &:nth-child(2) { opacity: 0; }
+      &:nth-child(3) { transform: translateY(-0.38rem) rotate(-45deg); }
+    }
+  }
+}

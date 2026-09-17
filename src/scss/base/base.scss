@@ -1,0 +1,104 @@
+@use "../utils/utils" as *;
+@use "resets";
+
+:root {
+  color-scheme: dark;
+  font-family: $font-body;
+  line-height: 1.6;
+  font-weight: 400;
+  color: $color-ink;
+  background: $color-paper;
+}
+
+body {
+  min-width: 320px;
+  background: $color-paper;
+  overflow-x: hidden;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  @include focus-ring;
+}
+
+p {
+  color: $color-muted;
+}
+
+::selection {
+  color: $color-accent-ink;
+  background: $color-accent;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: $color-primary-ink;
+  background: $color-primary;
+  border-radius: 0.5rem;
+  transform: translateY(-160%);
+  transition: transform $transition;
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+.section-shell {
+  @include container;
+  padding-block: 5.5rem;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 2rem;
+
+  &__eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: $color-accent;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin-bottom: 0.65rem;
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.1;
+  }
+}
+
+@include respond(mobile) {
+  .section-shell {
+    padding-block: 4rem;
+  }
+}

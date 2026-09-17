@@ -1,0 +1,18 @@
+@use "variables" as *;
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 640px) { @content; }
+  }
+}
+
+@mixin focus-ring {
+  outline: 3px solid $color-accent;
+  outline-offset: 3px;
+}
+
+@mixin container {
+  width: min(calc(100% - 2rem), $max-width);
+  margin-inline: auto;
+}

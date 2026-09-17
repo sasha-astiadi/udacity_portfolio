@@ -1,0 +1,14 @@
+{
+  "name": "sasha-astiadi-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "sass src/scss/main.scss dist/main.css --style=expanded --no-source-map",
+    "watch": "sass --watch src/scss/main.scss:dist/main.css --style=expanded",
+    "dev": "live-server --open=src/"
+  },
+  "dependencies": {
+    "sass": "^1.79.3"
+  },
+  "devDependencies": {}
+}

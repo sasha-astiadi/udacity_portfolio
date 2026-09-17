@@ -1,0 +1,58 @@
+@use "../utils/utils" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.15rem;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform $transition, background-color $transition, color $transition, box-shadow $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-sm;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &--primary {
+    color: $color-primary-ink;
+    background: $color-primary;
+
+    &:hover,
+    &:active {
+      color: $color-primary-ink;
+      background: $color-primary-dark;
+    }
+  }
+
+  &--secondary {
+    color: $color-ink;
+    background: $color-surface;
+    border-color: $color-line;
+
+    &:hover,
+    &:active {
+      color: $color-primary-ink;
+      background: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+
+  &--accent {
+    color: $color-accent-ink;
+    background: $color-accent;
+
+    &:hover,
+    &:active {
+      color: $color-accent-ink;
+      background: $color-accent-hover;
+    }
+  }
+}

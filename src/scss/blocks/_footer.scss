@@ -1,0 +1,32 @@
+@use "../utils/utils" as *;
+
+.footer {
+  color: $color-muted;
+  background: $color-paper;
+  border-top: 1px solid $color-line;
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.5rem;
+  }
+
+  &__contact {
+    color: $color-ink;
+    font-weight: 800;
+  }
+
+  &__contact:hover {
+    color: $color-accent;
+  }
+}
+
+@include respond(mobile) {
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
