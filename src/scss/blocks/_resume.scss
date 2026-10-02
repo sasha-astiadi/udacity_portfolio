@@ -28,7 +28,9 @@
 }
 
 @include respond(mobile) {
-  .resume__card {
-    grid-template-columns: 1fr;
+  .resume {
+    &__card {
+      grid-template-columns: 1fr;
+    }
   }
 }

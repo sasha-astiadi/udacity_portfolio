@@ -61,25 +61,29 @@
 }
 
 @include respond(tablet) {
-  .latest-projects__grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .latest-projects {
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+    }
 
-  .latest-projects__card:last-child {
-    grid-column: 1 / -1;
-    max-width: calc(50% - $space-3xl / 2);
-    width: 100%;
-    justify-self: center;
+    &__card:last-child {
+      grid-column: 1 / -1;
+      max-width: calc(50% - $space-3xl / 2);
+      width: 100%;
+      justify-self: center;
+    }
   }
 }
 
 @include respond(mobile) {
-  .latest-projects__grid {
-    grid-template-columns: 1fr;
-  }
+  .latest-projects {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
 
-  .latest-projects__card:last-child {
-    grid-column: auto;
-    max-width: none;
+    &__card:last-child {
+      grid-column: auto;
+      max-width: none;
+    }
   }
 }
