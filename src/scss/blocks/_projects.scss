@@ -6,7 +6,7 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
+    gap: $space-3xl;
   }
 
   &__card {
@@ -38,7 +38,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 1.25rem;
+    padding: $space-3xl;
   }
 
   &__title {
@@ -67,7 +67,7 @@
 
   .latest-projects__card:last-child {
     grid-column: 1 / -1;
-    max-width: calc(50% - 0.625rem);
+    max-width: calc(50% - $space-3xl / 2);
     width: 100%;
     justify-self: center;
   }

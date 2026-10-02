@@ -13,6 +13,6 @@
 }
 
 @mixin container {
-  width: min(calc(100% - 2rem), $max-width);
+  width: min(calc(100% - $space-5xl), $max-width);
   margin-inline: auto;
 }

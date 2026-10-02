@@ -5,8 +5,8 @@
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 2rem;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
+    gap: $space-5xl;
+    padding: clamp($space-4xl, 4vw, 2.5rem);
     background: $color-surface;
     border: 1px solid $color-line;
     border-radius: $radius-lg;
@@ -14,7 +14,7 @@
   }
 
   h2 {
-    margin-bottom: 0.5rem;
+    margin-bottom: $space-xs;
     color: $color-ink;
     font-family: $font-display;
     font-size: clamp(1.8rem, 3vw, 2.5rem);

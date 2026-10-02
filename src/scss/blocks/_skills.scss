@@ -7,11 +7,11 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: $space-md;
   }
 
   &__item {
-    padding: 0.65rem 0.9rem;
+    padding: $space-sm $space-xl;
     color: $color-ink-soft;
     background: $color-surface-raised;
     border: 1px solid $color-line;

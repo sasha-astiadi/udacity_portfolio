@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: $space-2xl;
   }
 
   &__brand {
@@ -68,7 +68,7 @@
   &__nav {
     display: flex;
     align-items: center;
-    gap: clamp(0.8rem, 2vw, 1.5rem);
+    gap: clamp($space-lg, 2vw, $space-4xl);
   }
 
   &__link {
@@ -84,7 +84,7 @@
     }
 
     &--cta {
-      padding: 0.55rem 0.9rem;
+      padding: 0.55rem $space-xl;
       color: $color-primary-ink;
       background: $color-primary;
       border-radius: 0.65rem;
@@ -105,19 +105,19 @@
 
     &__nav {
       position: absolute;
-      top: calc(100% + 0.5rem);
-      left: 1rem;
-      right: 1rem;
+      top: calc(100% + $space-xs);
+      left: $space-2xl;
+      right: $space-2xl;
       display: grid;
-      gap: 0.25rem;
-      padding: 0.75rem;
+      gap: $space-2xs;
+      padding: $space-md;
       background: $color-surface;
       border: 1px solid $color-line;
       border-radius: $radius-md;
       box-shadow: $shadow-lg;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-0.5rem);
+      transform: translateY(-$space-xs);
       transition: opacity $transition, transform $transition, visibility $transition;
     }
 

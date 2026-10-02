@@ -31,15 +31,15 @@
     display: grid;
     grid-template-columns: minmax(180px, 300px) 1fr;
     align-items: center;
-    gap: clamp(2rem, 7vw, 6rem);
-    padding-block: 6rem;
+    gap: clamp($space-5xl, 7vw, $space-7xl);
+    padding-block: $space-7xl;
   }
 
   &__portrait {
     width: min(100%, 290px);
     aspect-ratio: 1;
     margin-inline: auto;
-    padding: 0.65rem;
+    padding: $space-sm;
     background: rgba($color-white, 0.18);
     border: 1px solid rgba($color-white, 0.45);
     border-radius: 50%;
@@ -54,7 +54,7 @@
 
   &__eyebrow {
     display: inline-block;
-    margin-bottom: 0.8rem;
+    margin-bottom: $space-lg;
     color: $color-accent;
     font-size: 0.8rem;
     font-weight: 900;
@@ -64,7 +64,7 @@
 
   h1 {
     max-width: 760px;
-    margin-bottom: 1rem;
+    margin-bottom: $space-2xl;
     color: $color-ink;
     font-family: $font-display;
     font-size: clamp(2.5rem, 6vw, 5.25rem);
@@ -83,7 +83,7 @@
   &__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: $space-lg;
   }
 }
 
@@ -93,20 +93,20 @@
 }
 
 @keyframes float-in {
-  from { opacity: 0; transform: translateY(1rem) scale(0.96); }
+  from { opacity: 0; transform: translateY($space-2xl) scale(0.96); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes drift {
-  from { transform: translate3d(-1rem, -0.5rem, 0); }
-  to { transform: translate3d(1rem, 0.5rem, 0); }
+  from { transform: translate3d(-$space-2xl, -$space-xs, 0); }
+  to { transform: translate3d($space-2xl, $space-xs, 0); }
 }
 
 @include respond(tablet) {
   .bio {
     &__inner {
       grid-template-columns: 210px 1fr;
-      gap: 2rem;
+      gap: $space-5xl;
     }
   }
 }
@@ -119,8 +119,8 @@
 
     &__inner {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
-      padding-block: 4rem 4.5rem;
+      gap: $space-4xl;
+      padding-block: $space-section-sm $space-6xl;
       text-align: center;
     }
 

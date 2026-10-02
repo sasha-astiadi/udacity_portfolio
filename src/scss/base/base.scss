@@ -55,9 +55,9 @@ p {
 .skip-link {
   position: fixed;
   z-index: 1000;
-  top: 0.75rem;
-  left: 0.75rem;
-  padding: 0.65rem 0.9rem;
+  top: $space-md;
+  left: $space-md;
+  padding: $space-sm $space-xl;
   color: $color-primary-ink;
   background: $color-primary;
   border-radius: 0.5rem;
@@ -71,16 +71,16 @@ p {
 
 .section-shell {
   @include container;
-  padding-block: 5.5rem;
+  padding-block: $space-section;
 }
 
 .section-heading {
   max-width: 680px;
-  margin-bottom: 2rem;
+  margin-bottom: $space-5xl;
 
   &__eyebrow {
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: $space-xs;
     color: $color-accent;
     font-size: 0.78rem;
     font-weight: 900;
@@ -89,7 +89,7 @@ p {
   }
 
   h2 {
-    margin-bottom: 0.65rem;
+    margin-bottom: $space-sm;
     font-family: $font-display;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 500;
@@ -99,6 +99,6 @@ p {
 
 @include respond(mobile) {
   .section-shell {
-    padding-block: 4rem;
+    padding-block: $space-section-sm;
   }
 }

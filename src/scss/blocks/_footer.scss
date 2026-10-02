@@ -10,8 +10,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    padding-block: 1.5rem;
+    gap: $space-2xl;
+    padding-block: $space-4xl;
   }
 
   &__contact {
